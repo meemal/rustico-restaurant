@@ -2,6 +2,8 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Zen+Kaku+Gothic+Antique:wght@400;500&family=Zen+Old+Mincho:wght@900&display=swap');
+
 $red: #750e2d;
 $primary: $red;
 $yellow: #fff461;
@@ -16,3 +18,13 @@ $container-max-widths: (
   lg: 960px,
   xl: 960px
 );
+
+$font-family-display:      'Zen Old Mincho', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// $font-family-sans-serif:         'Zen Kaku Gothic Antique', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-handwritten:     'Parisienne', cursive;
+
+$headings-font-family:        $font-family-display;
+
+.cursive {
+    font-family: $font-family-handwritten;
+}
