@@ -35,3 +35,19 @@
     color: #fff;
     text-align: center;
 }
+
+// Work In Progress
+#page-wrapper {
+    padding: 0;
+}
+.wp-block-cover {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+.home .wp-block-cover {
+    min-height: 50vh;
+}
