@@ -36,8 +36,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 							$menuitem = get_sub_field('menu_item');
 							echo "<h3>".$sectionname ."</h3>";
 							echo "<p>". $sectionintro."</p>";
-							if (have_rows('$menuitem')):
-								while(have_rows('$menuitem')) : the_row();
+							if (have_rows($menuitem)):
+								while(have_rows($menuitem)) : the_row();
 									$itemname = get_sub_field('item_name');
 									$itemdesc = get_sub_field('item_description');
 									$itemprice = get_sub_field('item_price');
