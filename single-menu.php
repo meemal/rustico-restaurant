@@ -33,17 +33,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 						while(have_rows('section')) : the_row();
 							$sectionname = get_sub_field('section_name');
 							$sectionintro = get_sub_field('section_intro');
-							$menuitem = get_sub_field('menu_item');
+				
 							echo "<h3>".$sectionname ."</h3>";
 							echo "<p>". $sectionintro."</p>";
-							if (have_rows($menuitem)):
-								while(have_rows($menuitem)) : the_row();
+							if (have_rows("menu_item")):
+								while(have_rows("menu_item")) : the_row();
 									$itemname = get_sub_field('item_name');
 									$itemdesc = get_sub_field('item_description');
 									$itemprice = get_sub_field('item_price');
-									$itemdiet = get_sub_field('item_diet');
+									// $itemdiet = get_sub_field('item_diet');
 									echo "<div>";
-									echo "<h3>".$itemname . "(".$itemdiet.")</h3>";
+									// echo "<h3>".$itemname . "(".$itemdiet.")</h3>";
 									echo "<p>". $itemdesc."</p>";
 									echo "<p>". $itemprice."</p>";
 									echo "</div>";
