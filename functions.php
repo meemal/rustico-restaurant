@@ -35,3 +35,4 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 //  Rustico Additions
 
 require_once('inc/menu_cpt_setup.php');
+require_once('inc/menu_acf_setup.php');
