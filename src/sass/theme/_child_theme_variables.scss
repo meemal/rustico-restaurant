@@ -2,13 +2,12 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Zen+Kaku+Gothic+Antique:wght@400;500&family=Zen+Old+Mincho:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;700&family=Zen+Old+Mincho:wght@900&display=swap');
 
 $red: #750e2d;
 $primary: $red;
 $yellow: #fff461;
 $secondary: $yellow;
-$light: #fff99f;
 
 $navbar-dark-color: #fff;
 
@@ -19,12 +18,19 @@ $container-max-widths: (
   xl: 960px
 );
 
-$font-family-display:      'Zen Old Mincho', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-// $font-family-sans-serif:         'Zen Kaku Gothic Antique', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-handwritten:     'Parisienne', cursive;
+$font-family-display:    'Zen Old Mincho', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: 'Zen Kaku Gothic Antique', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-$headings-font-family:        $font-family-display;
+$headings-font-family:   $font-family-display;
+$font-family-base:       $font-family-sans-serif;
 
-.cursive {
-    font-family: $font-family-handwritten;
-}
+$font-size-base:         1.1rem;
+$font-size-lg:           $font-size-base * 1.3;
+$font-size-sm:           $font-size-base * .875;
+
+$body-color:           #fff;
+$body-bg:                $primary;
+
+
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 2rem;
