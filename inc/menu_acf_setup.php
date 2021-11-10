@@ -1,4 +1,12 @@
+
+
 <?php
+
+/**
+ * ACF - Advanced Custom FIelds to populate the menu
+ */
+
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -33,7 +41,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '50',
+						'width' => '30',
 						'class' => '',
 						'id' => '',
 					),
@@ -52,7 +60,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '50',
+						'width' => '45',
 						'class' => '',
 						'id' => '',
 					),
@@ -61,6 +69,31 @@ acf_add_local_field_group(array(
 					'prepend' => '',
 					'append' => '',
 					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_618ba552dcde1',
+					'label' => 'Section Width',
+					'name' => 'section_width',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '25',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'col-md-6' => 'Half Width',
+						'col-12' => 'Full Width',
+					),
+					'default_value' => 'col-12',
+					'allow_null' => 0,
+					'multiple' => 0,
+					'ui' => 0,
+					'return_format' => 'value',
+					'ajax' => 0,
+					'placeholder' => '',
 				),
 				array(
 					'key' => 'field_6183e377584f9',

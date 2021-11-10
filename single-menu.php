@@ -18,37 +18,56 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
 			<main class="site-main" id="main">
-
+				
 				<?php
 				while ( have_posts() ) {
 					the_post();
 					get_template_part( 'loop-templates/content', 'single' );
 					understrap_post_nav();
 
+					echo "<div class='d-flex flex-wrap my-5'>";
 					if (have_rows('section')):
 						while(have_rows('section')) : the_row();
 							$sectionname = get_sub_field('section_name');
 							$sectionintro = get_sub_field('section_intro');
-				
-							echo "<h3>".$sectionname ."</h3>";
-							echo "<p>". $sectionintro."</p>";
+							$sectionwidth = get_sub_field('section_width');
+							echo "<div class='".$sectionwidth." my-5'>";
+							echo "<h3 class='text-center text-uppercase'>".$sectionname ."</h3>";
+							echo "<p class='text-center border-top border-bottom p-4 text-uppercase'>". $sectionintro."</p>";
+
 							if (have_rows("menu_item")):
+								echo "<div class='d-flex flex-wrap'>";
 								while(have_rows("menu_item")) : the_row();
 									$itemname = get_sub_field('item_name');
 									$itemdesc = get_sub_field('item_description');
-									$itemprice = get_sub_field('item_price');
-									// $itemdiet = get_sub_field('item_diet');
-									echo "<div>";
-									// echo "<h3>".$itemname . "(".$itemdiet.")</h3>";
-									echo "<p>". $itemdesc."</p>";
-									echo "<p>". $itemprice."</p>";
-									echo "</div>";
-								endwhile;
+									$itemprice = returnPriceFormatted(get_sub_field('item_price'));
+									$itemdiet = returnDietaryFormatted(get_sub_field('item_diet'));
+									$hasoptions = get_sub_field('has_options');
 
+
+
+									echo "<div class='border-bottom col-6 mb-2'>";
+									echo "<p class='text-uppercase'>".$itemname . $itemdiet ."</p>";
+									echo "<p>". $itemdesc.$itemprice. "</p>";
+									if ($hasoptions){
+										if (have_rows("price_variation")):
+											while(have_rows("price_variation")) : the_row();
+												$vardesc = get_sub_field('variation_description');
+												$varprice = returnPriceFormatted(get_sub_field('variation_price'));
+												$vardiet = returnDietaryFormatted(get_sub_field('variation_dietary'));
+												echo "<p>". $vardesc.$itemprice.$vardiet. "</p>";
+
+											endwhile;
+										else: 
+											echo "Please add some price varations for this menu item";
+										endif;
+									}
+									echo "</div>";
+									
+								endwhile;
+								echo "</div>";
+								echo "</div>";
 							else:
 								echo "<blockquote>Please add some menu items to section '".$sectionname."'</blockquote>";
 							endif;
@@ -57,6 +76,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					else:
 						echo "<blockquote>Please add some sections to this menu.</blockquote>";
 					endif;
+
+				
 // 					section
 // section_name
 // section_intro
@@ -73,6 +94,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 // variation_dietary 
 				}
 				?>
+	</div>
 
 			</main><!-- #main -->
 
