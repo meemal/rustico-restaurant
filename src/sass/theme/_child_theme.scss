@@ -154,7 +154,8 @@ iframe {
 }
 
 // Social Icons
-#main-menu li a[href^="http"] {
+#main-menu li a[href*="facebook"],
+#main-menu li a[href*="instagram"] {
     display: inline-block;
     margin: 0.5em;
     width: 28px;
