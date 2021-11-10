@@ -32,9 +32,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 							$sectionname = get_sub_field('section_name');
 							$sectionintro = get_sub_field('section_intro');
 							$sectionwidth = get_sub_field('section_width');
-							echo "<div class='".$sectionwidth." my-5'>";
-							echo "<h3 class='text-center text-uppercase'>".$sectionname ."</h3>";
-							echo "<p class='text-center border-top border-bottom p-4 text-uppercase'>". $sectionintro."</p>";
+							switch ($sectionwidth){
+								case "half": 
+									$maincol = "col-md-6";
+									$subcol = "col-6";
+									break;
+									case "full":
+									$maincol = "col-12";
+									$subcol = "col-md-6 col-lg-3";
+									break;
+								default:
+									$maincol = "col-12";
+									$subcol = "col-md-6 col-lg-3";
+									break;
+							}
+
+							echo "<div class='".$maincol." my-5'>";
+							echo "<h3 class='text-center text-uppercase border-bottom pb-4 mb-0'>".$sectionname ."</h3>";
+							if ( $sectionintro ){
+								echo "<p class='text-center border-bottom p-4 text-uppercase'>". $sectionintro."</p>";
+							}
+							
 
 							if (have_rows("menu_item")):
 								echo "<div class='d-flex flex-wrap'>";
@@ -47,18 +65,25 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-									echo "<div class='border-bottom col-6 mb-2'>";
-									echo "<p class='text-uppercase'>".$itemname . $itemdiet ."</p>";
-									echo "<p>". $itemdesc.$itemprice. "</p>";
+									echo "<div class='border-bottom ".$subcol." mb-2 p-2'>";
+									if ($itemdesc){
+										echo "<p><span class='text-uppercase'>".$itemname . "</span>" . $itemdiet ."</p>";
+										echo "<p>". $itemdesc.$itemprice. "</p>";
+									}else{
+										echo "<p><span class='text-uppercase'>".$itemname . "</span>" . $itemdiet . $itemprice. "</p>";
+									}
+									
 									if ($hasoptions){
 										if (have_rows("price_variation")):
+											echo "<ul class='list-unstyled'>";
 											while(have_rows("price_variation")) : the_row();
 												$vardesc = get_sub_field('variation_description');
 												$varprice = returnPriceFormatted(get_sub_field('variation_price'));
 												$vardiet = returnDietaryFormatted(get_sub_field('variation_dietary'));
-												echo "<p>". $vardesc.$itemprice.$vardiet. "</p>";
+												echo "<li>".$vardesc.$varprice.$vardiet. "</li>";
 
 											endwhile;
+											echo "</ul>";
 										else: 
 											echo "Please add some price varations for this menu item";
 										endif;
