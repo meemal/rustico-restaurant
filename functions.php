@@ -38,6 +38,7 @@ require_once('inc/menu_cpt_setup.php');
 require_once('inc/menu_acf_setup.php');
 require_once('inc/menu_func.php');
 
+
 /**
  * Disable all colors within Gutenberg.
  */
