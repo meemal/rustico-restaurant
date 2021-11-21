@@ -57,20 +57,26 @@ $contrain-large: 46rem;
 .constrain {
     &-small {
         max-width: $contrain-small;
-        .wp-block-columns & {
-            max-width: $contrain-small / 2;
+        &.wp-block-separator {
+            .wp-block-columns & {
+                max-width: $contrain-small / 2;
+            }
         }
     }
     &-medium {
         max-width: $contrain-medium;
-        .wp-block-columns & {
-            max-width: $contrain-medium / 2;
+        &.wp-block-separator {
+            .wp-block-columns & {
+                max-width: $contrain-medium / 2;
+            }
         }
     }
     &-large {
         max-width: $contrain-large;
-        .wp-block-columns & {
-            max-width: $contrain-large / 2;
+        &.wp-block-separator {
+            .wp-block-columns & {
+                max-width: $contrain-large / 2;
+            }
         }
     }
 }
