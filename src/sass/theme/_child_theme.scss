@@ -57,12 +57,27 @@ $contrain-large: 46rem;
 .constrain {
     &-small {
         max-width: $contrain-small;
+        &.wp-block-separator {
+            .wp-block-columns & {
+                max-width: $contrain-small / 2;
+            }
+        }
     }
     &-medium {
         max-width: $contrain-medium;
+        &.wp-block-separator {
+            .wp-block-columns & {
+                max-width: $contrain-medium / 2;
+            }
+        }
     }
     &-large {
         max-width: $contrain-large;
+        &.wp-block-separator {
+            .wp-block-columns & {
+                max-width: $contrain-large / 2;
+            }
+        }
     }
 }
 
@@ -185,8 +200,13 @@ iframe {
 // Footer
 footer.with-full-width {
     background: linear-gradient(rgba(#e7cf01, 95%) 0, rgba(#ffea2a, 65%) 100%);
-    color: initial;
+    color: #000;
     a:not(.wp-block-button__link) {
-        color: inherit;
+        color: #000;
+    }
+    .wp-block-table table {
+        td, th {
+            border-color: rgba(#000, 50%);
+        }
     }
 }
