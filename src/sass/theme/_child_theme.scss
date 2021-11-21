@@ -143,6 +143,31 @@ $contrain-large: 46rem;
     }
 }
 
+// Content Block Component
+.content-block {
+    background: #fffef4;
+    color: #000;
+    margin-left: -15px;
+    margin-right: -15px;
+    .wp-block-columns {
+        margin: 0;
+    }
+    .wp-block-image {
+        margin: -2rem;
+        width: calc(100% + 4rem);
+        max-width: calc(100% + 4rem);
+        img {
+            margin: 0;
+        }
+    }
+    .wp-block-column {
+        padding: 2rem;
+    }
+    .wp-block-column:not(:first-child) {
+        margin-left: 0;
+    }
+}
+
 // Separator Component
 .wp-block-separator {
     max-width: $contrain-small;
