@@ -31,3 +31,30 @@
 	font-size: $h1-font-size;
 	font-weight: $headings-font-weight;
 }
+
+// Content Block Component
+.content-block {
+	background: $light;
+	color: $black;
+	.wp-block-columns {
+		margin: 0;
+	}
+	.wp-block-column {
+		padding: 0 1rem;
+	}
+}
+
+// Footer
+footer.with-full-width {
+	background: $light;
+	color: $black;
+	a:not(.wp-block-button__link) {
+		color: $black;
+	}
+	.wp-block-table table {
+		color: inherit;
+		td, th {
+				border-color: rgba($black, 50%);
+		}
+	}
+}
