@@ -21,7 +21,7 @@
  function returnPriceFormatted($price){
   $itemprice = "";
     if ($price){
-      $itemprice = "<span> / £".$price ."</span>";
+      $itemprice = "£".$price;
     }
     return $itemprice;
  }
