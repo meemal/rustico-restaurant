@@ -84,8 +84,8 @@ acf_add_local_field_group(array(
 						'id' => '',
 					),
 					'choices' => array(
-						'col-md-6' => 'Half Width',
-						'col-12' => 'Full Width',
+						'half' => 'Half Width',
+						'full' => 'Full Width',
 					),
 					'default_value' => 'col-12',
 					'allow_null' => 0,
