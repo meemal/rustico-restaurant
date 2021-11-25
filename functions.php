@@ -46,7 +46,7 @@ add_theme_support( 'disable-custom-colors' );
 
 
 /**
- * Wrap menu itms in a span
+ * Wrap menu items in a span
  */
 add_filter('nav_menu_item_args', function ($args, $item, $depth) {
     if ($args->theme_location == 'primary') {
@@ -56,3 +56,14 @@ add_filter('nav_menu_item_args', function ($args, $item, $depth) {
     }
     return $args;
 }, 10, 3);
+
+
+/**
+ * Creat menu shortcode
+ */
+function rustico_menu_output() { 
+    $output = include('inc/menu-output.php');
+    return $output;
+} 
+// register shortcode
+add_shortcode('rustico-menu', 'rustico_menu_output');
