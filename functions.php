@@ -80,7 +80,7 @@ function notadmin_remove_menus() {
     remove_menu_page( 'users.php' );
     remove_menu_page( 'tools.php' );
     remove_menu_page( 'edit.php' );
-    remove_menu_page( 'upload.php' );
+    remove_menu_page( 'options-general.php' );
 }
 
 // add_action( 'admin_init', function () {
