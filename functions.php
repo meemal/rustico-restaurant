@@ -83,13 +83,13 @@ function notadmin_remove_menus() {
     remove_menu_page( 'upload.php' );
 }
 
-add_action( 'admin_init', function () {
-    echo "add_action( 'admin_init', function () {<br>";
+// add_action( 'admin_init', function () {
+//     echo "add_action( 'admin_init', function () {<br>";
  
-    foreach ( $GLOBALS['menu'] as $menu ) {
-        echo "&nbsp;&nbsp;&nbsp;&nbsp;remove_menu_page( '$menu[2]' );<br>";
-    }
+//     foreach ( $GLOBALS['menu'] as $menu ) {
+//         echo "&nbsp;&nbsp;&nbsp;&nbsp;remove_menu_page( '$menu[2]' );<br>";
+//     }
  
-    echo "}, PHP_INT_MAX );";
-    exit();
-} );
+//     echo "}, PHP_INT_MAX );";
+//     exit();
+// } );
