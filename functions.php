@@ -67,3 +67,29 @@ function rustico_menu_output() {
 } 
 // register shortcode
 add_shortcode('rustico-menu', 'rustico_menu_output');
+
+// Hide menu options from anyone who is not admin
+if ( !current_user_can('manage_options') ) {
+  
+    add_action( 'admin_menu', 'notadmin_remove_menus', 999 ); 
+  
+} 
+function notadmin_remove_menus() {
+    remove_menu_page( 'index.php' );
+    remove_menu_page( 'edit-comments.php' );
+    remove_menu_page( 'users.php' );
+    remove_menu_page( 'tools.php' );
+    remove_menu_page( 'edit.php' );
+    remove_menu_page( 'upload.php' );
+}
+
+add_action( 'admin_init', function () {
+    echo "add_action( 'admin_init', function () {<br>";
+ 
+    foreach ( $GLOBALS['menu'] as $menu ) {
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;remove_menu_page( '$menu[2]' );<br>";
+    }
+ 
+    echo "}, PHP_INT_MAX );";
+    exit();
+} );
