@@ -37,6 +37,7 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 require_once('inc/menu_cpt_setup.php');
 require_once('inc/menu_acf_setup.php');
 require_once('inc/menu_func.php');
+require_once('inc/menu-output.php');
 
 
 /**
@@ -61,8 +62,15 @@ add_filter('nav_menu_item_args', function ($args, $item, $depth) {
 /**
  * Creat menu shortcode
  */
-function rustico_menu_output() { 
-    $output = include('inc/menu-output.php');
+
+
+function rustico_menu_output($atts ) { 
+    $atts = shortcode_atts(
+        array(
+            'menuid' => '101',
+        ), $atts);
+    $output = displayMenu($atts['menuid']);
+    
     return $output;
 } 
 // register shortcode

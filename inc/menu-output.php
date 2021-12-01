@@ -1,11 +1,15 @@
 <?php 
 
-$output = "";
 
-// WP_Query arguments
-$args = array(
-	'post_type' => array( 'menu' ),
-);
+
+function displayMenu($menuid){
+  $output = "";
+
+  // WP_Query arguments
+  $args = array(
+    'post_type' => array( 'menu' ),
+    'p' => $menuid,   // id of the post you want to query
+  );
 
 // The Query
 $queryMenu = new WP_Query( $args );
@@ -86,5 +90,7 @@ if ( $queryMenu->have_posts() ) {
 wp_reset_postdata();
 
 return $output;
+  
+}
 
 ?>
