@@ -90,8 +90,8 @@ $contrain-large: 46rem;
     padding: 1rem;
     margin-top: 1px;
     margin-bottom: 1px;
-    @include media-breakpoint-up(sm) {
-        padding: 2rem;
+    @include media-breakpoint-down(sm) {
+        padding: 3rem 1rem;
     }
 }
 .without-spacing {
@@ -113,7 +113,11 @@ $contrain-large: 46rem;
     background-color: #fff;
     color: $body-bg;
 }
-
+@include media-breakpoint-down(md) {
+    .wp-block-buttons{
+        margin:32px 0 16px;
+    }
+}
 // Block Cover Component
 .wp-block-cover {
     width: 100vw;
@@ -134,6 +138,15 @@ $contrain-large: 46rem;
     .home & {
         min-height: 50vh;
     }
+  
+    @include media-breakpoint-down(md) {
+        // Smaller than md: 768px
+        .wp-block-cover__inner-container{
+            margin: 56px 0;
+        }
+        
+    }
+    
 }
 
 // Gallery Component
@@ -171,6 +184,12 @@ $contrain-large: 46rem;
     .wp-block-column:not(:first-child) {
         margin-left: 0;
     }
+    @include media-breakpoint-down(sm) {
+        .reverse-mobile {
+            flex-direction: column-reverse;
+        }
+    }
+
 }
 
 // Separator Component
@@ -179,6 +198,11 @@ $contrain-large: 46rem;
     margin: 2em auto;
     .wp-block-cover & {
         border-color: transparent;
+    }
+    @include media-breakpoint-down(md) {
+        .wp-block-separator{
+            margin: 1em auto;
+        }
     }
 }
 
@@ -242,3 +266,4 @@ footer.with-full-width {
         }
     }
 }
+
