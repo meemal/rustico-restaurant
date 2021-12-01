@@ -13,6 +13,11 @@ $contrain-large: 46rem;
     text-align: center;
 }
 
+// Header 
+.bg-primary {
+    background: transparent !important;
+}
+
 // Text colour on dark
 .site {
     color: $body-color;
