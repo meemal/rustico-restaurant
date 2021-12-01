@@ -25,10 +25,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="site-info d-flex justify-content-between">
+					<div class="site-info d-flex justify-content-md-between flex-wrap justify-content-center">
 
-						<?php understrap_site_info(); ?>
-						<span>Green website hosting by <a href="Low carbon website developers">From This Day</a> and powered by <a href="http://my.kualo.com/uk/go/01089">Kualo</a></span>
+						<span><?php understrap_site_info(); ?></span>
+						<span>Green website hosting powered by <a href="http://my.kualo.com/uk/go/01089">Kualo</a></span>
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
