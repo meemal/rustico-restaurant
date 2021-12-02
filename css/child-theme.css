@@ -14737,6 +14737,9 @@ footer.with-full-width .wp-block-table table td, footer.with-full-width .wp-bloc
   margin-top: 0;
   margin-bottom: 0;
 }
+.rustico-footer a {
+  color: #750e2d;
+}
 
 .has-blue-color,
 .has-blue-color:visited {
