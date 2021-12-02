@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -14709,6 +14709,9 @@ footer.with-full-width .wp-block-table table td, footer.with-full-width .wp-bloc
 #main-menu li.active a {
   text-decoration: none;
   color: #fff461;
+}
+#main-menu li.active a li:not(.active) a {
+  color: #fffef4;
 }
 #main-menu a:hover {
   text-decoration: none;

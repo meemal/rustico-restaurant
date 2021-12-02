@@ -3,6 +3,11 @@
     a {
       text-decoration: none;
       color: $secondary;
+      li:not(.active) {
+        a {
+          color: $light;
+        }
+      }
     }
   }
   a {
@@ -14,6 +19,7 @@
   }
   .dropdown-menu {
     background-color: $primary;
+    
   }
 
   //social icons
