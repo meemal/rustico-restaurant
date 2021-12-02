@@ -81,9 +81,25 @@ body.understrap-no-sidebar{
 	.wp-block-button {
 		.wp-block-button__link {
 			@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+			border-radius: 0;
+
+			&:hover {
+				text-decoration : none;
+				background-color: $primary;
+				color: $white;
+			}
 		}
-		&:not(.is-style-outline) .wp-block-button__link {
-			border: $btn-border-width solid transparent;
+		&.is-style-fill {
+			.wp-block-button__link{
+				border: $btn-border-width solid white;
+				&:hover{
+					border-color: white;
+					
+				}
+			}
+			
 		}
 	}
 }
+
+

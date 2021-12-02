@@ -20,13 +20,17 @@ if ( $queryMenu->have_posts() ) {
 		$queryMenu->the_post();
 
     if (have_rows('section')):
-      $output .= '<nav aria-label="Jump to menus" class="mt-5 text-center text-uppercase"><p>Browse Menus</p>';
+      $output .= '<nav aria-label="Jump to menus" class="mt-5 text-center text-uppercase">';
+      $output .= '<div class="wp-block-buttons is-content-justification-center">';
       while(have_rows('section')) : the_row();
         $sectionname = get_sub_field('section_name');
         if ($sectionname) {
-          $output .= '<h3><a href="#section_'.preg_replace('/\W+/', '', $sectionname).'">'.$sectionname .'</a></h3>';
+          $output .= '<div class="wp-block-button is-style-outline">';
+          $output .= '<a class="wp-block-button__link  dropdown-toggle" href="#section_'.preg_replace('/\W+/', '', $sectionname).'">'.$sectionname .'</a>';
+          $output .= '</div>';
         }
       endwhile;
+      $output .= '</div>';
       $output .= '</nav>';
     endif;
   
