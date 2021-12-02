@@ -115,3 +115,9 @@ function notadmin_remove_menus() {
 //     echo "}, PHP_INT_MAX );";
 //     exit();
 // } );
+
+function rustico_remove_page_templates( $templates ) {
+        return array();
+    }
+    add_filter( 'theme_page_templates', 'rustico_remove_page_templates' );
+    
