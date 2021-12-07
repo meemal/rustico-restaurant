@@ -57,20 +57,20 @@ if ( $queryMenu->have_posts() ) {
             $hasoptions = get_sub_field('has_options');
   
             $output .= "<div class='mb-2'>";
-            $output .= "<p class='d-flex flex-row flex-nowrap justify-content-between align-content-start mb-0'>";
-              $output .= "<span>";
-                $output .= "<strong>".$itemname ."</strong>". $itemdiet;
-                if ($itemdesc) {$output .= "<br />".$itemdesc;}
-              $output .= "</span>";
-              $output .= "<span class='d-flex pl-4 lead'><strong>".$itemprice."</strong></span>";
-            $output .= "</p>";
+            $output .= "<div class='d-flex flex-row flex-nowrap justify-content-between align-content-start mb-0'>";
+              $output .= "<div class='mb-3'>";
+                $output .= "<strong style='font-size:1.25rem;'>".$itemname ."</strong>". $itemdiet;
+                if ($itemdesc) {$output .= "<br /><span class='text-light'>".$itemdesc."</span>";}
+              $output .= "</div>";
+              $output .= "<div class='d-flex pl-4 lead'><strong>".$itemprice."</strong></div>";
+            $output .= "</div>";
             if ($hasoptions){
               if (have_rows("price_variation")):
                 while(have_rows("price_variation")) : the_row();
                   $vardesc = get_sub_field('variation_description');
                   $varprice = returnPriceFormatted(get_sub_field('variation_price'));
                   $vardiet = returnDietaryFormatted(get_sub_field('variation_dietary'));
-                  $output .= "<p class='d-flex flex-row flex-nowrap justify-content-between align-content-start ml-3 mb-0'>- ". $vardesc.$vardiet."<span class='pl-4 lead'><strong>".$varprice."</strong></span>". "</p>";
+                  $output .= "<p class='d-flex flex-row flex-nowrap justify-content-between align-content-start ml-3 mb-0'><span class='text-light'>- ". $vardesc.$vardiet."</span><span class='pl-4 lead'><strong>".$varprice."</strong></span>". "</p>";
                 endwhile;
               else: 
                 $output .= "Please add some price varations for this menu item";
