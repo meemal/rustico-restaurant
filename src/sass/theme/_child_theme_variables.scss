@@ -7,9 +7,9 @@
 
 $red: #750e2d;
 $primary: $red;
-$yellow: #fff461;
+$yellow: #e0c800;
 $secondary: $yellow;
-$light: #fffef4;
+$light: lighten($yellow, 50%);
 
 
 $navbar-dark-color: #fff;

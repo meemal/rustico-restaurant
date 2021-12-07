@@ -251,3 +251,24 @@ footer.with-full-width {
     }
 }
 
+.btn-primary {
+    color: $dark;
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary.focus {
+    color: $dark;
+    background-color: lighten($secondary, 6%);
+    border-color: lighten($secondary, 6%);
+  }
+
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: $primary;
+    background-color: lighten($secondary, 50%);
+    border-color: lighten($secondary, 50%);
+  }
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: $primary;
+    background-color: lighten($secondary, 50%);
+    border-color: lighten($secondary, 50%);
+  }
