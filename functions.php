@@ -103,7 +103,11 @@ function notadmin_remove_menus() {
     // unset($submenu['themes.php'][20]); //remove appearance / background
 }
 
+// get the the role object
+$role_object = get_role( 'editor' );
 
+// add $cap capability to this role object
+$role_object->add_cap( 'edit_theme_options' );
 
 // add_action( 'admin_init', function () {
 //     echo "add_action( 'admin_init', function () {<br>";
