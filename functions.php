@@ -80,44 +80,44 @@ add_shortcode('rustico-menu', 'rustico_menu_output');
  * Hide menu options from anyone who is not admin
  */
 
-if ( !current_user_can('manage_options') ) {
+// if ( !current_user_can('manage_options') ) {
   
-    add_action( 'admin_menu', 'notadmin_remove_menus', 999 ); 
+//     add_action( 'admin_menu', 'notadmin_remove_menus', 999 ); 
   
-} 
-function notadmin_remove_menus() {
-    remove_menu_page( 'index.php' );
-    remove_menu_page( 'edit-comments.php' );
-    remove_menu_page( 'users.php' );
-    remove_menu_page( 'tools.php' );
-    remove_menu_page( 'edit.php' );
-    remove_menu_page( 'options-general.php' );
-    remove_menu_page( 'profile.php' );
-    remove_submenu_page( 'themes.php', 'themes.php' ); // hide the theme selection submenu
-    remove_submenu_page( 'themes.php', 'widgets.php' ); // hide the widgets submenu
-    remove_submenu_page( 'themes.php', 'background.php');
+// } 
+// function notadmin_remove_menus() {
+//     remove_menu_page( 'index.php' );
+//     remove_menu_page( 'edit-comments.php' );
+//     remove_menu_page( 'users.php' );
+//     remove_menu_page( 'tools.php' );
+//     remove_menu_page( 'edit.php' );
+//     // remove_menu_page( 'options-general.php' );
+//     remove_menu_page( 'profile.php' );
+//     remove_submenu_page( 'themes.php', 'themes.php' ); // hide the theme selection submenu
+//     remove_submenu_page( 'themes.php', 'widgets.php' ); // hide the widgets submenu
+//     remove_submenu_page( 'themes.php', 'background.php');
 
-    // Remove Customize from the Appearance submenu
-    global $submenu;
-    unset($submenu['themes.php'][6]); //remove appearance / customize
-    unset($submenu['themes.php'][20]); //remove appearance / background
-}
+//     // Remove Customize from the Appearance submenu
+//     // global $submenu;
+//     // unset($submenu['themes.php'][6]); //remove appearance / customize
+//     // unset($submenu['themes.php'][20]); //remove appearance / background
+// }
 
 
 
-// add_action( 'admin_init', function () {
-//     echo "add_action( 'admin_init', function () {<br>";
+// // add_action( 'admin_init', function () {
+// //     echo "add_action( 'admin_init', function () {<br>";
  
-//     foreach ( $GLOBALS['menu'] as $menu ) {
-//         echo "&nbsp;&nbsp;&nbsp;&nbsp;remove_menu_page( '$menu[2]' );<br>";
-//     }
+// //     foreach ( $GLOBALS['menu'] as $menu ) {
+// //         echo "&nbsp;&nbsp;&nbsp;&nbsp;remove_menu_page( '$menu[2]' );<br>";
+// //     }
  
-//     echo "}, PHP_INT_MAX );";
-//     exit();
-// } );
+// //     echo "}, PHP_INT_MAX );";
+// //     exit();
+// // } );
 
 function rustico_remove_page_templates( $templates ) {
         return array();
     }
-    add_filter( 'theme_page_templates', 'rustico_remove_page_templates' );
+add_filter( 'theme_page_templates', 'rustico_remove_page_templates' );
     
