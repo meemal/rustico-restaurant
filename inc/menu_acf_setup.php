@@ -51,25 +51,7 @@ acf_add_local_field_group(array(
 					'append' => '',
 					'maxlength' => '',
 				),
-				array(
-					'key' => 'field_6183e3casdw4fb',
-					'label' => 'Section Suplementary Info',
-					'name' => 'section_suplementary',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '40',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-				),
+		
 				array(
 					'key' => 'field_6183e33c584f8',
 					'label' => 'Section Intro',
@@ -89,8 +71,9 @@ acf_add_local_field_group(array(
 					'append' => '',
 					'maxlength' => '',
 				),
+
 				array(
-							'key' => 'field_6183e3ca584fb',
+							'key' => 'field_618323454fb',
 							'label' => 'Item Suplementary Info',
 							'name' => 'item_suplementary',
 							'type' => 'text',
