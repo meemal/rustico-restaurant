@@ -41,7 +41,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '20',
+						'width' => '40',
 						'class' => '',
 						'id' => '',
 					),
@@ -61,7 +61,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '40',
+						'width' => '60',
 						'class' => '',
 						'id' => '',
 					),
@@ -74,14 +74,33 @@ acf_add_local_field_group(array(
 
 				array(
 							'key' => 'field_618323454fb',
-							'label' => 'Item Suplementary Info',
-							'name' => 'item_suplementary',
+							'label' => 'Section Suplementary Info',
+							'name' => 'section_suplementary',
 							'type' => 'text',
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array(
-								'width' => '40',
+								'width' => '50',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_61832345web',
+							'label' => 'Section Suplementary Info Footer',
+							'name' => 'section_suplementary_foot',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '50',
 								'class' => '',
 								'id' => '',
 							),
@@ -305,7 +324,9 @@ acf_add_local_field_group(array(
 								),
 							),
 						),
+					
 					),
+				
 				),
 			),
 		),

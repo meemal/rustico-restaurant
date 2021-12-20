@@ -40,7 +40,7 @@ if ( $queryMenu->have_posts() ) {
         $sectionname = get_sub_field('section_name');
         $sectionintro = get_sub_field('section_intro');
         $sectionsup = get_sub_field('section_suplementary');
-        
+        $sectionsupf = get_sub_field('section_suplementary_foot');
         if ($sectionname) {
           $output .= "<div class='my-5' id='section_".preg_replace('/\W+/', '', $sectionname)."'>";
           $output .= "<h3 class='text-center text-uppercase pb-4 mb-4 border-bottom'>".$sectionname ."</h3>";
@@ -87,8 +87,11 @@ if ( $queryMenu->have_posts() ) {
         else:
           $output .= "<blockquote>Please add some menu items to section '".$sectionname."'</blockquote>";
         endif;
+        if ($sectionsupf) {
+          $output .= "<p class='text-center mb-5 pb-3 font-weight-light text-uppercase'>- ". $sectionsupf." -</p>";
+        }
       endwhile;
-  
+     
     else:
       $output .= "<blockquote>Please add some sections to this menu.</blockquote>";
     endif;
