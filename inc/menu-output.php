@@ -39,6 +39,8 @@ if ( $queryMenu->have_posts() ) {
       while(have_rows('section')) : the_row();
         $sectionname = get_sub_field('section_name');
         $sectionintro = get_sub_field('section_intro');
+        $sectionsup = get_sub_field('section_suplementary');
+        
         if ($sectionname) {
           $output .= "<div class='my-5' id='section_".preg_replace('/\W+/', '', $sectionname)."'>";
           $output .= "<h3 class='text-center text-uppercase pb-4 mb-4 border-bottom'>".$sectionname ."</h3>";
@@ -46,7 +48,10 @@ if ( $queryMenu->have_posts() ) {
           $output .= "<div class='my-5'>";
         }
         if ($sectionintro) {
-          $output .= "<p class='text-center border-bottom pb-4 text-uppercase'>". $sectionintro."</p>";
+          $output .= "<p class='text-center border-bottom  pb-4 text-uppercase'>". $sectionintro."</p>";
+        }
+        if ($sectionsup) {
+          $output .= "<p class='text-center pb-2'><em>~ ". $sectionsup." ~</em></p>";
         }
         if (have_rows("menu_item")):
           while(have_rows("menu_item")) : the_row();
