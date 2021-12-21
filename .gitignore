@@ -74,3 +74,10 @@ typings/
 
 # FuseBox cache
 .fusebox/
+css/custom-editor-style.css.map
+css/child-theme.css.map
+css/child-theme.min.css
+css/child-theme.min.css.map
+css/custom-editor-style.css.map
+css/custom-editor-style.min.css
+css/custom-editor-style.min.css.map
