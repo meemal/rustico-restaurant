@@ -38,8 +38,23 @@ require_once('inc/menu_cpt_setup.php');
 require_once('inc/menu_acf_setup.php');
 require_once('inc/menu_func.php');
 require_once('inc/menu-output.php');
-
-
+//
+/**
+ * Google analytics
+ */
+add_action('wp_head','my_analytics', 20);
+function my_analytics() {
+    ?>
+   <script async src='https://www.googletagmanager.com/gtag/js?id=G-4732VW3H4S'></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+    
+            gtag('config', 'G-4732VW3H4S');
+        </script>
+    <?php
+}
 /**
  * Disable all colors within Gutenberg.
  */
@@ -124,4 +139,6 @@ function rustico_remove_page_templates( $templates ) {
         return array();
     }
 add_filter( 'theme_page_templates', 'rustico_remove_page_templates' );
-    
+
+
+
